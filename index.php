@@ -1,8 +1,11 @@
 <?php
 
-require('Todo.php');
-require('Task.php');
-require('TaskList.php');
+require 'vendor/autoload.php';
+
+
+use App\TaskList;
+use App\Task;
+
 $sublist =   new TaskList([
       new Task('Todo 2a'),
       new Task('Todo 2b')

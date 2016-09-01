@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Task implements Todo
 {
   private $name;
