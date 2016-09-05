@@ -28,7 +28,7 @@ class TaskList implements Todo
   public function isFinished()
   {
     foreach ($this->todoList as $todo) {
-      if(!$todo->isFinished) return false;
+      if(!$todo->isFinished()) return false;
     }
     return true;
   }
