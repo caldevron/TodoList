@@ -5,38 +5,41 @@ namespace App;
 class TaskList implements Todo
 {
 
-  private $todoList = [];
+    private $todoList = [];
 
-  public function __construct(array $tasks)
-  {
-      $this->todoList = $tasks;
-  }
-
-  public function add(Todo $task)
-  {
-    $this->todoList[] = $task;
-  }
-
-  public function remove(Todo $task)
-  {
-    if($index = array_search($task, $this->todoList, true))
+    public function __construct(array $tasks)
     {
-      unset($this->todoList[$index]);
+        $this->todoList = $tasks;
     }
-  }
 
-  public function isFinished()
-  {
-    foreach ($this->todoList as $todo) {
-      if(!$todo->isFinished()) return false;
+    public function add(Todo $task)
+    {
+        $this->todoList[] = $task;
     }
-    return true;
-  }
 
-  public function markFinished()
-  {
-    foreach ($this->todoList as $todo) {
-      $todo->markFinished();
+    public function remove(Todo $task)
+    {
+        $index = array_search($task, $this->todoList, true);
+
+        if ($index !== false) {
+            unset($this->todoList[$index]);
+        }
     }
-  }
+
+    public function isFinished()
+    {
+        foreach ($this->todoList as $todo) {
+            if (!$todo->isFinished()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public function markFinished()
+    {
+        foreach ($this->todoList as $todo) {
+            $todo->markFinished();
+        }
+    }
 }

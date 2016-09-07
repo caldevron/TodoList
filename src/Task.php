@@ -4,35 +4,35 @@ namespace App;
 
 class Task implements Todo
 {
-  private $name;
+    private $name;
 
-  private $due;
+    private $due;
 
-  private $isFinish = false;
+    private $isFinish = false;
 
 
-  public function __construct($name)
-  {
-    $this->name = $name;
-  }
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
 
-  public function getName()
-  {
-      return $this->name;
-  }
+    public function getName()
+    {
+        return $this->name;
+    }
 
-  public function isFinished()
-  {
-    return $this->isFinish;
-  }
+    public function isFinished()
+    {
+        return $this->isFinish;
+    }
 
-  public function markFinished()
-  {
-    $this->isFinish = true;
-  }
+    public function markFinished()
+    {
+        $this->isFinish = true;
+    }
 
-  public function __toString()
-  {
-    return $this->name;
-  }
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
