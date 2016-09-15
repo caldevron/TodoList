@@ -7,7 +7,7 @@ class TaskList implements Todo
 
     private $todoList = [];
 
-    public function __construct(array $tasks)
+    public function __construct(array $tasks=null)
     {
         $this->todoList = $tasks;
     }

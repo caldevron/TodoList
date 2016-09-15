@@ -31,6 +31,16 @@ class Task implements Todo
         $this->isFinish = true;
     }
 
+    public function setDue(\DateTime $due)
+    {
+        $this->due = $due;
+    }
+
+    public function getDue()
+    {
+        return $this->due->format('Y-m-d H:i');
+    }
+
     public function __toString()
     {
         return $this->name;
